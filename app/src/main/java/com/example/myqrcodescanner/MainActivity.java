@@ -39,19 +39,26 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, PackageManager.PERMISSION_GRANTED);
 
-        for(int i = 0; i < QR_CODES.length; i++)  {
-            Button button = (Button)findViewById(BUTTON_ID[i]);
-            button.setText(QR_CODES[i]);
-            button.setBackgroundColor(Color.RED);
-        }
-
-
+        colorButtons(Color.RED);
 
     }
 
     public void scanButton(View view)  {
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
         intentIntegrator.initiateScan();
+    }
+
+    public void colorButtons(int color)  {
+        for(int i = 0; i < QR_CODES.length; i++)  {
+            Button button = (Button)findViewById(BUTTON_ID[i]);
+            button.setText(QR_CODES[i]);
+            button.setBackgroundColor(Color.RED);
+        }
+    }
+
+    public void resetButton(View view)  {
+        colorButtons(Color.RED);
+        finish = 0;
     }
 
     @Override
