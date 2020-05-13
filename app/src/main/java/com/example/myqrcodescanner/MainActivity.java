@@ -19,12 +19,11 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] QR_CODES = {"blue fish", "Shark", "Yellow Fish", "Status_4"};
+    String[] QR_CODES = {"blue fish", "Shark", "Yellow Fish"};
     private final int[] BUTTON_ID = {
             (R.id.btn_status_1),
             (R.id.btn_status_2),
-            (R.id.btn_status_3),
-            (R.id.btn_status_4)
+            (R.id.btn_status_3)
     };
 
     private TextView textView;
