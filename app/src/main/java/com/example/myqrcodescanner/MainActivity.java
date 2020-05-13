@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
             (R.id.btn_status_2),
             (R.id.btn_status_3)
     };
+
+    int finish = 0;
 
     private TextView textView;
     @Override
@@ -73,7 +76,11 @@ public class MainActivity extends AppCompatActivity {
             if( QR_CODES[i].equals(results) )  {
                 Button button = (Button)findViewById(BUTTON_ID[i]);
                 button.setBackgroundColor(Color.GREEN);
-
+                finish++;
+            }
+            if(finish == QR_CODES.length)  {
+                Toast toast=Toast.makeText(getApplicationContext(),"You Have Finished the Game!",Toast.LENGTH_LONG);
+                toast.show();
             }
         }
     }
